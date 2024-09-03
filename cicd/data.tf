@@ -32,7 +32,7 @@ data "aws_ami" "nexus_ami_info" {
 
     filter {
         name   = "root-device-type"
-        values = ["ebs"]
+        values = ["EBS"]
     }
 
     filter {
