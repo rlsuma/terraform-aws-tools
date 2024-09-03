@@ -6,7 +6,7 @@ module "jenkins" {
 
   instance_type          = "t3.small"
   vpc_security_group_ids = ["sg-0e78201b3e0335a6d"] #replace your SG
-  subnet_id = "subnet-06fe2626378723cdd" #replace your Subnet
+  subnet_id = "subnet-00ebf4b2596ead86e" #replace your Subnet
   ami = data.aws_ami.ami_info.id
   user_data = file("jenkins.sh")
   tags = {
@@ -22,7 +22,7 @@ module "jenkins_agent" {
   instance_type          = "t3.small"
   vpc_security_group_ids = ["sg-0e78201b3e0335a6d"]
   # convert StringList to list and get first element
-  subnet_id = "subnet-06fe2626378723cdd"
+  subnet_id = "subnet-00ebf4b2596ead86e"
   ami = data.aws_ami.ami_info.id
   user_data = file("jenkins-agent.sh")
   tags = {
